@@ -87,13 +87,16 @@
       align-items: center;
     }
     footer .copy {
-      display: block;
+      display: none;
       position: relative;;
       height: 4rem;
       width: 4rem;
       aspect-ratio: 1 / 1;
       margin-left: 1rem;
       cursor: pointer;
+    }
+    footer .copy.enabled {
+      display: block;
     }
     footer .copy::before {
       content: '';
@@ -185,38 +188,43 @@
     </footer>
   </div>
 <script>
-  var copyEmailTimeout;
-  var mouseEnter = false;
-  var timeoutRunning = false
   const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-  const wrapper = document.querySelector(".copy");
   if (!isTouchDevice) {
     document.body.classList.add("hover");
-    wrapper.addEventListener('mouseenter', () => {
-      wrapper.setAttribute("aria-label", "Kopēt e-pastu");
-      mouseEnter = true;
-    });
-    wrapper.addEventListener('mouseleave', () => {
-      mouseEnter = false;
-      if (timeoutRunning) return;
-      wrapper.classList.remove("copied");
-    });
   }
-  wrapper.addEventListener('click', () => {
-    copyEmail();
-  });
-  function copyEmail() {
-    navigator.clipboard.writeText("inese@smartraccoons.lv").then(() => {
-      wrapper.setAttribute("aria-label", "Nokopēts!");
-      wrapper.classList.add("copied");
-      clearTimeout(copyEmailTimeout);
-      timeoutRunning = true;
-      copyEmailTimeout = setTimeout(() => {
-        timeoutRunning = false;
-        if (mouseEnter) return;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    const wrapper = document.querySelector(".copy");
+    wrapper.classList.add("enabled");
+    var copyEmailTimeout;
+    var mouseEnter = false;
+    var timeoutRunning = false
+    if (!isTouchDevice) {
+      wrapper.addEventListener('mouseenter', () => {
+        wrapper.setAttribute("aria-label", "Kopēt e-pastu");
+        mouseEnter = true;
+      });
+      wrapper.addEventListener('mouseleave', () => {
+        mouseEnter = false;
+        if (timeoutRunning) return;
         wrapper.classList.remove("copied");
-      }, 2000);
+      });
+    }
+    wrapper.addEventListener('click', () => {
+      copyEmail();
     });
+    function copyEmail() {
+      navigator.clipboard.writeText("inese@smartraccoons.lv").then(() => {
+        wrapper.setAttribute("aria-label", "Nokopēts!");
+        wrapper.classList.add("copied");
+        clearTimeout(copyEmailTimeout);
+        timeoutRunning = true;
+        copyEmailTimeout = setTimeout(() => {
+          timeoutRunning = false;
+          if (mouseEnter) return;
+          wrapper.classList.remove("copied");
+        }, 2000);
+      });
+    }
   }
 </script>
 </body>
