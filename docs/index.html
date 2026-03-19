@@ -59,7 +59,7 @@
     }
     h1 {
       font-weight: 300;
-      margin-bottom: 1rem;
+      margin-bottom: 5rem;
     }
     h2 {
       font-weight: 700;
@@ -71,6 +71,32 @@
     }
     p {
       margin-bottom: 2rem;
+    }
+    ul {
+      list-style: none;
+      margin-bottom: 3rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      justify-content: center;
+    }
+    ul li {
+      padding: 0 2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: '';
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 0.05rem;
+      background: #fff;
+      transform: translateX(-50%);
+    }
+    ul li:first-child::before {
+      display: none;
     }
     footer {
       display: flex;
@@ -144,11 +170,12 @@
     .hover a:hover {
       border-color: transparent;
     }
+    .g-reviews { max-width: 800px; width: 90%; }
     @media (max-width: 640px) {
       header img {
         max-width: 30%;;
       }
-      p {
+      p, li {
         font-size: 3.5rem;
       }
       a {
@@ -166,6 +193,72 @@
       footer .copy::after {
         font-size: 3rem;
       }
+      .g-reviews { max-width: 300px; }
+    }
+
+    /* Google-style reviews block */
+    .g-reviews {
+      background: #fff;
+      color: #202124;
+      /* max-width: 800px; */
+      margin: 24px auto;
+      padding: 16px;
+    }
+    .g-reviews.loading {
+      display: none;
+    }
+    .g-reviews.error {
+      background: transparent;
+    }
+    .g-reviews__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+    .g-title { font-weight: 800; font-size: 18px; color: #202124; }
+    .g-meta { color: #5f6368; opacity: .85; margin-top: 2px; font-size: 14px; }
+    .g-cta {
+      text-decoration: none;
+      padding: 8px 10px;
+      font-weight: 600;
+    }
+    .g-reviews__list { margin-top: 14px; display: grid; gap: 12px; }
+    /* Carousel */
+    .g-carousel { position: relative; --perView: 4; --gap: 12px; }
+      .g-carousel { position: relative; --perView: 4; --gap: 12px; }
+    .g-carousel__viewport { overflow: hidden; }
+    .g-carousel__track { display: flex; transition: transform 300ms ease; gap: var(--gap); }
+    .g-slide { flex: 0 0 calc((100% - (var(--gap) * (var(--perView) - 1))) / var(--perView)); min-width: calc((100% - (var(--gap) * (var(--perView) - 1))) / var(--perView)); box-sizing: border-box; padding: 8px; }
+    .g-carousel__controls { position: absolute; inset: 0; pointer-events: none; }
+    .g-btn { width: 30px; height: 30px; background: #fff; color: #848484; display: blcok; font-size: 0; line-height: 0; cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); pointer-events: auto; border-radius: 50%; border: 1px solid #848484; box-shadow: 0 1px 2px rgba(0,0,0,.08); transition: background 200ms ease, color 200ms ease, transform 150ms ease, box-shadow 200ms ease, border-color 200ms ease; }
+    .g-btn::before { content: ""; display: block; width: 8px; height: 8px; position: absolute; top: 8px; left: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; }
+    .hover .g-btn:hover { background: #848484; color: #fff; border-color: #848484; box-shadow: 0 4px 10px rgba(132,132,132,.25); transform: translateY(-50%) scale(1.06); }
+    .g-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(132,132,132,.3); }
+    #gPrev { left: -10px; }
+    #gNext { right: -10px; }
+    #gPrev { transform: rotate(135deg); }
+    #gNext { transform: rotate(-45deg); }
+    .g-btn[disabled] { display: none; }
+    .g-card {
+      background: #f8f9fa;
+      padding: 12px;
+    }
+    .g-card-link { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
+    .g-card:hover { box-shadow: 0 2px 6px rgba(0,0,0,.12); border-color: #dadce0; }
+    .g-avatar-block { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: flex-end; }
+    .g-author { font-weight: 600; color: #202124; font-size: 14px; }
+    .g-time   { color: #5f6368; font-size: 13px; }
+    .g-stars  { margin: 6px 0 10px; font-size: 14px; color: #fbbc04; }
+    .g-text   { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; line-height: 1.5; color: #202124; font-size: 13px; }
+    .g-readmore { color: #848484; font-size: 15px; line-height: 1.5; margin: 5px 0; }
+    .g-card-link:hover .g-readmore { text-decoration: underline; }
+    .g-avatar { width: 32px; height: 32px; border-radius: 50%; background: #e8eaed; color: #202124; display: inline-grid; place-items: center; font-weight: 700; margin-top: 8px; overflow: hidden; }
+    .g-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 640px) {
+      .g-reviews { margin: 16px auto; padding: 14px; }
+      .g-avatar { width: 40px; height: 40px; }
+        .g-carousel { --perView: 2; --gap: 8px; }
     }
   </style>
 </head>
@@ -173,13 +266,120 @@
   <div>
     <header><img src="smartraccoonsdesign.png" alt="Smart Raccoons Logo" /></header>
     <main>
-      <h1>Mēs esam tavs dizaina partneris.</h1>
-      <h2>Izstrādājam dizainus, kuri palīdz<br />
-        tavam uzņēmumam augt.</h2>
-      <p>
-        Logo un zīmola identitāte, iepakojuma dizains, drukas materiāli,<br />
-        digitālais dizains, konsultācijas un dizaina stratēģija.
-      </p>
+      <h1>Stratēģisks dizains<br />
+mūsdienīgiem zīmoliem</h1>
+      <ul>
+        <li>Logo un zīmola identitāte</li>
+        <li>Iepakojuma dizains</li>
+        <li>Drukas materiāli</li>
+      </ul>
+      <ul>
+        <li>Digitālais dizains</li>
+        <li>Konsultācijas un dizaina stratēģija</li>
+      </ul>
+
+
+<section class="g-reviews loading">
+  <div class="g-carousel">
+    <div class="g-carousel__viewport">
+      <div id="gCarouselTrack" class="g-carousel__track"></div>
+    </div>
+    <div class="g-carousel__controls">
+      <button id="gPrev" class="g-btn" aria-label="Previous">‹</button>
+      <button id="gNext" class="g-btn" aria-label="Next">›</button>
+    </div>
+  </div>
+</section>
+
+<script>
+(async () => {
+  const ENDPOINT = "https://smart.raccoons.lv/api/reviews";
+
+  const res = await fetch(ENDPOINT, { cache: "no-store" });
+  document.querySelector('.g-reviews').classList.remove('loading');
+  if (!res.ok) throw new Error("Failed to load reviews");
+  const data = await res.json();
+
+  const header = document.getElementById("gReviewsHeader");
+
+  const track = document.getElementById("gCarouselTrack");
+  const prevBtn = document.getElementById("gPrev");
+  const nextBtn = document.getElementById("gNext");
+  let reviews = (data.reviews || []);
+  // If fewer than 4 reviews, append the same array until we have >=4
+  if (reviews.length < 4) {
+    const base = reviews.slice();
+    while (reviews.length < 4) reviews = reviews.concat(base);
+  }
+  function initial(name) {
+    const s = String(name || "").trim();
+    return s ? s[0].toUpperCase() : "?";
+  }
+  const LIMIT = 120;
+  track.innerHTML = reviews.map(r => {
+    const txt = String(r.text || "");
+    const truncated = txt.length > LIMIT;
+    const shortTxt = truncated ? (txt.slice(0, LIMIT).replace(/\s+\S*$/, '') + '…') : txt;
+    const img = r.authorAttribution && r.authorAttribution.photoUri;
+    const readUrl = r.googleMapsUri || data.mapsUrl;
+    return `
+    <a class="g-card g-slide g-card-link" href="${readUrl}" target="_blank" rel="noopener">
+      <div class="g-stars">${"★".repeat(r.rating || 0)}</div>
+      <div class="g-text">${escapeHtml(shortTxt)}</div>
+      ${truncated ? `<div class="g-readmore">Lasīt vairāk</div>` : ''}
+      <div class="g-avatar-block">
+        <div class="g-avatar">${img ? `<img src="${img}" alt="${escapeHtml(r.author || 'Avatar')}" />` : escapeHtml(initial(r.author))}</div>
+        <div class="g-author">${escapeHtml(r.author || "Anonymous")}</div>
+        <div class="g-time">${escapeHtml(r.relativeTime || "")}</div>
+      </div>
+    </a>
+    `;
+  }).join("");
+
+  // Slider: responsive perView from CSS (4 desktop, 2 mobile), move by 1 item per click
+  const carousel = document.querySelector('.g-carousel');
+  function getPerView() {
+    const v = parseInt(getComputedStyle(carousel).getPropertyValue('--perView'), 10);
+    return Number.isFinite(v) && v > 0 ? v : 4;
+  }
+  let index = 0;
+  let perView = getPerView();
+  const step = 1; // move by 1 review
+  let maxIndex = Math.max(0, Math.floor((reviews.length - perView) / step));
+  let stepPct = (100 * step / perView);
+  function update() {
+    track.style.transform = `translateX(${-index * stepPct}%)`;
+    prevBtn.disabled = index <= 0;
+    nextBtn.disabled = index >= maxIndex;
+  }
+  function recalc() {
+    perView = getPerView();
+    maxIndex = Math.max(0, Math.floor((reviews.length - perView) / step));
+    stepPct = (100 * step / perView);
+    if (index > maxIndex) index = maxIndex;
+    update();
+  }
+  update();
+  window.addEventListener('resize', recalc);
+  prevBtn.addEventListener('click', () => { if (index > 0) { index--; update(); } });
+  nextBtn.addEventListener('click', () => { if (index < maxIndex) { index++; update(); } });
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, c => ({
+      "&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"
+    }[c]));
+  }
+})().catch(err => {
+  document.querySelector('.g-reviews').classList.add('error');
+  document.querySelector('.g-reviews').classList.remove('loading');
+  const carousel = document.querySelector('.g-carousel');
+  if (carousel) carousel.innerHTML = `<a class="g-cta" href="https://www.google.com/maps?cid=2513767175975181188&hl=en&reviews=1
+" rel="noopener">Lasīt atsauksmes Google</a>`;
+});
+</script>
+
+
+
     </main>
     <footer>
       <span class="email"><a href="mailto:inese@smartraccoons.lv">inese@smartraccoons.lv</a><span class="copy"><span class="tooltip"></span>
