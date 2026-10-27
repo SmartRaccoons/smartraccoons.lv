@@ -1,292 +1,419 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Smart Raccoons Design</title>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;700&display=swap" rel="stylesheet">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-    html, body {
-      margin: 0;
-      height: 100%;
-      background-color: #DD0010;
-    }
-    html {
-      font-size: 62.5%;
-      font-size: clamp(20%, 0.8vw, 62.5%);
-    }
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 2.8rem;
-      font-weight: 400;
-      line-height: 1.3;
-      color: white;
-    }
-    body > div {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      position: relative;
-      padding: 2rem;
-      min-height: 100vh;
-      min-height: 100svh;
-      max-width: 1920px;
-      margin: 0 auto;
-    }
-    main, header {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-    header {
-      flex: 1;
-    }
-    main {
-      flex: 2;
-      margin: 2rem 0;
-      justify-content: start;
-    }
-    img {
-      max-width: 225px;
-    }
-    h1 {
-      font-weight: 300;
-      margin-bottom: 5rem;
-    }
-    h2 {
-      font-weight: 700;
-      margin-bottom: 6rem;
-    }
-    h1, h2 {
-      font-size: 6.8rem;
-      line-height: 1.1;
-    }
-    p {
-      margin-bottom: 2rem;
-    }
-    ul {
-      list-style: none;
-      margin-bottom: 3rem;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0;
-      justify-content: center;
-    }
-    ul li {
-      padding: 0 2rem;
-      position: relative;
-    }
-    ul li::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 1px;
-      background: #fff;
-      transform: translateX(-50%);
-    }
-    ul li:first-child::before {
-      display: none;
-    }
-    footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      flex-wrap: wrap;
-    }
-    footer > span {
-      margin: 2rem;
-    }
-    footer .email {
-      display: flex;
-      align-items: center;
-    }
-    footer .copy {
-      display: none;
-      position: relative;;
-      height: 4rem;
-      width: 4rem;
-      aspect-ratio: 1 / 1;
-      margin-left: 1rem;
-      cursor: pointer;
-    }
-    footer .copy.enabled {
-      display: block;
-    }
-    footer .copy::before {
-      content: '';
-      display: block;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 60%;
-      height: 60%;
-      transform: translate(-50%, -30%);
-      background: url('copy.svg') no-repeat center center;
-      background-size: contain
-    }
-    footer .copy::after {
-      position: absolute;
-      bottom: 100%;
-      left: 50%;
-      transform: translateX(-50%);
-      background-color: #000;
-      color: #fff;
-      font-size: 1.75rem;
-      padding: 0.5rem 0.8rem 0.35rem 0.8rem;
-      border-radius: 0.4rem;
-      white-space: nowrap;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      content: attr(aria-label);
-    }
-    footer .copy.copied::after {
-      opacity: 1;
-    }
-    .hover footer .copy:hover::after {
-      opacity: 1;
-    }
-    footer a {
-      white-space: nowrap;
-    }
-    a {
-      color: white;
-      border-bottom: 1px solid white;
-      text-decoration: none;
-      transition: border-color 0.3s ease;
-    }
-    .hover a:hover {
-      border-color: transparent;
-    }
-    .g-reviews { max-width: 800px; width: 90%; }
-    @media (max-width: 640px) {
-      header img {
-        max-width: 30%;;
-      }
-      p, li {
-        font-size: 3.5rem;
-      }
-      a {
-        font-size: 5rem;
-      }
-      footer {
-        flex-direction: column-reverse;
-        align-items: center;
-      }
-      footer .copy {
-        height: 7rem;
-        width: 7rem;
-        margin-left: 3rem;
-      }
-      footer .copy::after {
-        font-size: 3rem;
-      }
-      .g-reviews { max-width: 300px; }
-    }
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Smart Raccoons Design</title>
+<meta name="description" content="Stratēģisks dizains mūsdienīgiem zīmoliem – logo un zīmola identitāte, iepakojuma dizains, drukas materiāli un digitālais dizains.">
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#E3202B;--ink:#fff;--muted:rgba(255,255,255,.85);--line:rgba(255,255,255,.4);--card:#fff;--dark:#1B1B1B;--accent:#fff;--accent-ink:#E3202B;--r:20px}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:80px}
+body{font-family:"DM Sans",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55;font-size:17px}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+h1{font-size:clamp(2.8rem,8vw,6.5rem);line-height:.98;font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(2rem,4.5vw,3.4rem);line-height:1.05;font-weight:800;letter-spacing:-.02em;margin-bottom:16px}
+h3{font-size:1.3rem;font-weight:600}
+.lead{color:var(--muted);max-width:56ch}
+.btn{display:inline-block;padding:14px 26px;border-radius:999px;background:var(--accent);color:var(--accent-ink);text-decoration:none;font-weight:600;transition:transform .15s}
+.btn:hover{transform:translateY(-2px)}
 
-    /* Google-style reviews block */
-    .g-reviews {
-      background: #fff;
-      color: #202124;
-      /* max-width: 800px; */
-      margin: 24px auto;
-      padding: 16px;
-    }
-    .g-reviews.loading {
-      display: none;
-    }
-    .g-reviews.error {
-      background: transparent;
-    }
-    .g-reviews__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 12px;
-    }
-    .g-title { font-weight: 800; font-size: 18px; color: #202124; }
-    .g-meta { color: #5f6368; opacity: .85; margin-top: 2px; font-size: 14px; }
-    .g-cta {
-      text-decoration: none;
-      padding: 8px 10px;
-      font-weight: 600;
-    }
-    .g-reviews__list { margin-top: 14px; display: grid; gap: 12px; }
-    /* Carousel */
-    .g-carousel { position: relative; --perView: 4; --gap: 12px; }
-      .g-carousel { position: relative; --perView: 4; --gap: 12px; }
-    .g-carousel__viewport { overflow: hidden; }
-    .g-carousel__track { display: flex; transition: transform 300ms ease; gap: var(--gap); }
-    .g-slide { flex: 0 0 calc((100% - (var(--gap) * (var(--perView) - 1))) / var(--perView)); min-width: calc((100% - (var(--gap) * (var(--perView) - 1))) / var(--perView)); box-sizing: border-box; padding: 8px; }
-    .g-carousel__controls { position: absolute; inset: 0; pointer-events: none; }
-    .g-btn { width: 30px; height: 30px; background: #fff; color: #848484; display: blcok; font-size: 0; line-height: 0; cursor: pointer; position: absolute; top: 50%; transform: translateY(-50%); pointer-events: auto; border-radius: 50%; border: 1px solid #848484; box-shadow: 0 1px 2px rgba(0,0,0,.08); transition: background 200ms ease, color 200ms ease, transform 150ms ease, box-shadow 200ms ease, border-color 200ms ease; }
-    .g-btn::before { content: ""; display: block; width: 8px; height: 8px; position: absolute; top: 8px; left: 8px; border-right: 2px solid currentColor; border-bottom: 2px solid currentColor; }
-    .hover .g-btn:hover { background: #848484; color: #fff; border-color: #848484; box-shadow: 0 4px 10px rgba(132,132,132,.25); transform: translateY(-50%) scale(1.06); }
-    .g-btn:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(132,132,132,.3); }
-    #gPrev { left: -10px; }
-    #gNext { right: -10px; }
-    #gPrev { transform: rotate(135deg); }
-    #gNext { transform: rotate(-45deg); }
-    .g-btn[disabled] { display: none; }
-    .g-card {
-      background: #f8f9fa;
-      padding: 12px;
-    }
-    .g-card-link { display: flex; flex-direction: column; text-decoration: none; color: inherit; }
-    .g-card:hover { box-shadow: 0 2px 6px rgba(0,0,0,.12); border-color: #dadce0; }
-    .g-avatar-block { display: flex; flex: 1; flex-direction: column; align-items: center; justify-content: flex-end; }
-    .g-author { font-weight: 600; color: #202124; font-size: 14px; }
-    .g-time   { color: #5f6368; font-size: 13px; }
-    .g-stars  { margin: 6px 0 10px; font-size: 14px; color: #fbbc04; }
-    .g-text   { display: -webkit-box; -webkit-line-clamp: 4; -webkit-box-orient: vertical; overflow: hidden; white-space: normal; line-height: 1.5; color: #202124; font-size: 13px; }
-    .g-readmore { color: #848484; font-size: 15px; line-height: 1.5; margin: 5px 0; }
-    .g-card-link:hover .g-readmore { text-decoration: underline; }
-    .g-avatar { width: 32px; height: 32px; border-radius: 50%; background: #e8eaed; color: #202124; display: inline-grid; place-items: center; font-weight: 700; margin-top: 8px; overflow: hidden; }
-    .g-avatar img { width: 100%; height: 100%; object-fit: cover; display: block; }
-    @media (max-width: 640px) {
-      .g-reviews { margin: 16px auto; padding: 14px; }
-      .g-avatar { width: 40px; height: 40px; }
-        .g-carousel { --perView: 2; --gap: 8px; }
-    }
-  </style>
+/* Navigācija */
+header{position:sticky;top:0;z-index:10;background:rgba(227,32,43,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.logo{display:block;text-decoration:none}
+.logo img{display:block;height:54px;width:auto}
+nav ul{display:flex;gap:28px;list-style:none;padding:0;align-items:center}
+nav a{text-decoration:none}
+nav a:hover{text-decoration:underline}
+
+/* Hero */
+#hero{padding:80px 0 48px}
+.status{color:var(--dark);display:inline-flex;align-items:center;gap:8px;background:var(--card);padding:8px 16px;border-radius:999px;font-size:.9rem;margin-bottom:28px}
+.status::before{content:"";width:9px;height:9px;border-radius:50%;background:#22B573}
+#hero h1{letter-spacing:.012em;line-height:1.04;font-size:clamp(2.4rem,5vw,4.8rem)}
+#hero h1 span{display:block;text-wrap:balance}
+@media(min-width:1000px){#hero h1 span{white-space:nowrap}}
+#hero .lead{margin:28px 0 36px;font-size:1.2rem}
+
+/* Projekti (kartītes + atvēršamais logs) */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}
+.project-card{display:block;width:100%;text-align:left;border:0;padding:0;background:var(--card);color:var(--dark);font:inherit;cursor:pointer}
+.project-card .cover{display:block;aspect-ratio:1/1;overflow:hidden;background:var(--dark)}
+.project-card .cover img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s}
+.project-card:hover .cover img{transform:scale(1.04)}
+@media(max-width:900px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}}
+.project-modal{border:0;padding:0;background:var(--dark);color:#fff;width:min(1100px,calc(100% - 24px));max-height:92vh;margin:auto}
+.project-modal::backdrop{background:rgba(0,0,0,.75)}
+.project-modal .inner{padding:28px 28px 36px}
+.project-modal header{position:static;background:none;border:0;backdrop-filter:none;display:flex;justify-content:space-between;align-items:flex-start;gap:20px;margin-bottom:18px}
+.project-modal h3{font-size:clamp(1.8rem,4.2vw,3rem);line-height:1.05;font-weight:800;letter-spacing:.005em}
+.project-modal .close{flex:none;width:44px;height:44px;display:grid;place-items:center;border:0;background:transparent;color:#fff;padding:0;cursor:pointer}
+.project-modal .close:hover{opacity:.65}
+.project-modal:focus{outline:none}
+.project-modal .close:focus:not(:focus-visible){outline:none}
+.project-info{max-width:62ch;margin-bottom:32px}
+.project-info p{color:rgba(255,255,255,.78);font-size:1.1rem}
+.project-info p+p{margin-top:12px}
+.project-images{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:center}
+.project-images img{width:100%;height:auto;display:block}
+.project-images img.wide{grid-column:1/-1}
+.video-wrap{grid-column:1/-1;aspect-ratio:16/9;background:#000}
+.video-wrap iframe{width:100%;height:100%;border:0;display:block}
+@media(max-width:700px){.project-images{grid-template-columns:1fr}.project-modal .inner{padding:20px 16px 28px}}
+@media(prefers-reduced-motion:reduce){.project-card .cover img{transition:none}}
+
+/* Google atsauksmes */
+.g-reviews{background:#fff;color:#202124;border-radius:var(--r);max-width:800px;margin:0 auto;padding:16px}
+.g-reviews.loading{display:none}
+.g-reviews.error{background:transparent;text-align:center}
+.g-cta{padding:8px 10px;font-weight:600}
+.g-carousel{position:relative;--perView:4;--gap:12px}
+.g-carousel__viewport{overflow:hidden}
+.g-carousel__track{display:flex;transition:transform 300ms ease;gap:var(--gap)}
+.g-slide{flex:0 0 calc((100% - (var(--gap) * (var(--perView) - 1))) / var(--perView));min-width:calc((100% - (var(--gap) * (var(--perView) - 1))) / var(--perView));box-sizing:border-box;padding:8px}
+.g-carousel__controls{position:absolute;inset:0;pointer-events:none}
+.g-btn{width:30px;height:30px;background:#fff;color:#848484;font-size:0;line-height:0;cursor:pointer;position:absolute;top:50%;pointer-events:auto;border-radius:50%;border:1px solid #848484;box-shadow:0 1px 2px rgba(0,0,0,.08);transition:background 200ms ease,color 200ms ease,box-shadow 200ms ease,border-color 200ms ease}
+.g-btn::before{content:"";display:block;width:8px;height:8px;position:absolute;top:8px;left:8px;border-right:2px solid currentColor;border-bottom:2px solid currentColor}
+.g-btn:hover{background:#848484;color:#fff;border-color:#848484;box-shadow:0 4px 10px rgba(132,132,132,.25)}
+.g-btn:focus-visible{outline:none;box-shadow:0 0 0 3px rgba(132,132,132,.3)}
+#gPrev{left:-10px;transform:rotate(135deg)}
+#gNext{right:-10px;transform:rotate(-45deg)}
+.g-btn[disabled]{display:none}
+.g-card{background:#f8f9fa;padding:12px}
+.g-card-link{display:flex;flex-direction:column;text-decoration:none;color:inherit}
+.g-card:hover{box-shadow:0 2px 6px rgba(0,0,0,.12)}
+.g-avatar-block{display:flex;flex:1;flex-direction:column;align-items:center;justify-content:flex-end}
+.g-author{font-weight:600;color:#202124;font-size:14px}
+.g-time{color:#5f6368;font-size:13px}
+.g-stars{margin:6px 0 10px;font-size:14px;color:#fbbc04}
+.g-text{display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden;white-space:normal;line-height:1.5;color:#202124;font-size:13px}
+.g-readmore{color:#848484;font-size:15px;line-height:1.5;margin:5px 0}
+.g-card-link:hover .g-readmore{text-decoration:underline}
+.g-avatar{width:32px;height:32px;border-radius:50%;background:#e8eaed;color:#202124;display:inline-grid;place-items:center;font-weight:700;margin-top:8px;overflow:hidden}
+.g-avatar img{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:640px){.g-reviews{padding:14px}.g-avatar{width:40px;height:40px}.g-carousel{--perView:2;--gap:8px}}
+
+/* BUJ */
+details{border-bottom:1px solid var(--line);padding:20px 0}
+summary{cursor:pointer;font-weight:600;font-size:1.1rem;list-style:none;display:flex;justify-content:space-between;gap:16px}
+summary::after{content:"+";font-size:1.5rem;line-height:1}
+details[open] summary::after{content:"–"}
+details p{margin-top:12px;color:var(--muted);max-width:64ch}
+details:not([open])>*:not(summary){display:none}
+.faq{max-width:820px;margin-top:32px;border-top:1px solid var(--line)}
+
+/* Kontakti */
+#contact{background:var(--dark);color:#fff;border-radius:32px 32px 0 0;padding:88px 0 40px}
+#contact h2{max-width:18ch}
+.links{display:flex;gap:24px;flex-wrap:wrap;margin-top:40px;padding-top:28px;border-top:1px solid #33405E}
+.links a{color:#C9D0E0}
+.copy{margin-top:28px;color:#8B96B0;font-size:.9rem}
+
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+</style>
 </head>
 <body>
-  <div>
-    <header><img src="smartraccoonsdesign.png" alt="Smart Raccoons Logo" /></header>
-    <main>
-      <h1>Stratēģisks dizains<br />
-mūsdienīgiem zīmoliem</h1>
-      <ul>
-        <li>Logo un zīmola identitāte</li>
-        <li>Iepakojuma dizains</li>
-        <li>Drukas materiāli</li>
-      </ul>
-      <ul>
-        <li>Digitālais dizains</li>
-        <li>Konsultācijas un dizaina stratēģija</li>
-      </ul>
 
+<header>
+  <div class="wrap">
+    <nav aria-label="Galvenā navigācija">
+      <a class="logo" href="#hero"><img src="images/smart-raccoons-design-logo.png" alt="Smart Raccoons Design" width="1050" height="422"></a>
+      <ul>
+        <li><a href="#contact">Kontakti</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<section class="g-reviews loading">
-  <div class="g-carousel">
-    <div class="g-carousel__viewport">
-      <div id="gCarouselTrack" class="g-carousel__track"></div>
+<main>
+
+<section id="hero">
+  <div class="wrap">
+    <h1><span>Studio of creative hooligans.</span> <span>Born to tell stories.</span></h1>
+    <p class="lead">Dizains, kurš izpilda savu uzdevumu –<br>komunicē, paliek atmiņā un palīdz labāk pārdot.</p>
+  </div>
+</section>
+
+<section id="projects" style="padding-top:32px">
+  <div class="wrap">
+    <div class="grid">
+
+      <!-- ATTĒLU NOSAUKUMI (SEO): faili ir nosaukti pēc projekta un satura, mazie burti, bez garumzīmēm, ar domuzīmēm
+           (piem. erasmus-plus-logo.webp, pi-kuojis-nakts-logotips.webp). Attēlu secību projekta logā nosaka secība, kādā
+           rindas &lt;img&gt; ir sarakstītas zemāk (pirmā rinda = pirmais attēls). Jaunam attēlam: pievieno failu mapē images,
+           pēc līdzības pievieno jaunu &lt;img&gt; rindu ar aprakstošu alt tekstu. Horizontāli attēli tiek izstiepti pa abām kolonnām;
+           ja attēlam jābūt vienā kolonnā, pievieno tam atribūtu data-narrow. -->
+
+      <!-- KARTĪŠU SECĪBA lapā ir tāda, kādā projektu bloki ir sakārtoti zemāk.
+           Lai pievienotu jaunu projektu: nokopē visu projekta bloku (no article sākuma līdz beigām),
+           nomaini id (piem. p8), vāka attēlu, nosaukumu logā un attēlus logā. -->
+
+      <!-- Seeds &amp; Sprouts -->
+      <article>
+        <button class="project-card" type="button" data-open="p7" aria-label="Atvērt galeriju: Seeds &amp; Sprouts">
+          <span class="cover"><img src="images/seeds-and-sprouts-spinatu-iepakojums.webp" alt="" width="1600" height="1068"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p7" aria-labelledby="p7-title">
+          <div class="inner">
+            <header>
+              <h3 id="p7-title">Seeds &amp; Sprouts</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Dizaina pamatā ir dabas iedvesmota estētika, zaļie toņi un ilustrācijas, kas izceļ produktu svaigumu un dabisko izcelsmi.</p>
+              <p>Minimālistiskais dizains, pārdomātā tipogrāfija un vienotā grafiskā valoda veido atpazīstamu zīmola tēlu, kas konsekventi atspoguļojas gan produktu iepakojumā, gan drukātajos materiālos.</p>
+            </div>
+            <div class="project-images">
+          <img class="wide" src="images/seeds-and-sprouts-spinatu-iepakojums.webp" alt="Spinātu iepakojums ar Seeds &amp; Sprouts etiķeti uz spinātu lapu fona" loading="lazy" width="1600" height="1068">
+          <img src="images/seeds-and-sprouts-about-us.webp" alt="Seeds &amp; Sprouts informatīvs materiāls ar sadaļu „About Us” uz salātu lapu fona" loading="lazy" width="1080" height="1528">
+          <img src="images/seeds-and-sprouts-katalogs.webp" alt="Seeds &amp; Sprouts katalogs ar sadaļu „Produkcija” un rukolas ilustrāciju" loading="lazy" width="1080" height="1350">
+          <img src="images/seeds-and-sprouts-logo-digsti.webp" alt="Seeds &amp; Sprouts logo ar augu un saknēm uz dīgstu fona" loading="lazy" width="1443" height="1443">
+          <img src="images/seeds-and-sprouts-auduma-maisins.webp" alt="Zaļš auduma iepirkumu maisiņš ar baltām garšaugu ilustrācijām un kontaktinformāciju" loading="lazy" width="1200" height="1200">
+          <img src="images/seeds-and-sprouts-vizitkarte.webp" alt="Seeds &amp; Sprouts vizītkartes uz spinātu lapu fona" loading="lazy" width="1200" height="1500">
+          <img src="images/seeds-and-sprouts-logo-uz-auduma.webp" alt="Seeds &amp; Sprouts logo uz auduma" loading="lazy" width="1200" height="1200">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Priežvanagi -->
+      <article>
+        <button class="project-card" type="button" data-open="p6" aria-label="Atvērt galeriju: Atpūtas parka Priežvanagi vizuālā identitāte">
+          <span class="cover"><img src="images/priezvanagi-logo.webp" alt="" width="1085" height="1085"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p6" aria-labelledby="p6-title">
+          <div class="inner">
+            <header>
+              <h3 id="p6-title">Atpūtas parka Priežvanagi vizuālā identitāte</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Vizuālā identitāte veidota, balstoties uz atpūtas parka aktivitātēm un apkārtējās vides – upes, kanoe, loka šaušanas un priežu meža, kurš ieskauj teritoriju.</p>
+              <p>Izstrādāts logo, ikonu sistēma un vizuālās identitātes elementi.</p>
+            </div>
+            <div class="project-images">
+          <img src="images/priezvanagi-logo.webp" alt="Priežvanagi logo – mājas simbols ar koku un viļņiem uz meža fona" loading="lazy" width="1085" height="1085">
+          <img src="images/priezvanagi-ikonu-sistema.webp" alt="Priežvanagi ikonu sistēma un fotogrāfija uz priedes mizas fona" loading="lazy" width="1080" height="1350">
+          <img src="images/priezvanagi-kanoe.webp" alt="Kanoe laivas upē, ko ieskauj koki" loading="lazy" width="1080" height="1350">
+          <img src="images/priezvanagi-mala-kruze.webp" alt="Māla krūze ar iespiestu Priežvanagi logo" loading="lazy" width="856" height="1070">
+          <img src="images/priezvanagi-ikonas.webp" alt="Priežvanagi ikonas ar zīmoga tekstūru: gāzes deglis, karte, loks ar bultu, fotoaparāts, kanoe un lapa" loading="lazy" width="1122" height="1402">
+          <img src="images/priezvanagi-cepure.webp" alt="Zaļa cepure ar izšūtu Priežvanagi logo" loading="lazy" width="1086" height="1448">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Kampaņas vizuālā identitāte -->
+      <article>
+        <button class="project-card" type="button" data-open="p8" aria-label="Atvērt galeriju: Kampaņas vizuālā identitāte">
+          <span class="cover"><img src="images/uzvari-cina-ar-vezi-kampanas-vizualis.webp" alt="" width="1200" height="1200"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p8" aria-labelledby="p8-title">
+          <div class="inner">
+            <header>
+              <h3 id="p8-title">Kampaņas vizuālā identitāte</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Vizuālā identitāte Veselības ministrijas un Slimību profilakses un kontroles centra sabiedrības informēšanas kampaņai “Uzvari cīņā ar vēzi, pirms tā sākas”.</p>
+              <p>Kampaņas mērķis – veicināt izpratni par cilvēka papilomas vīrusu (CPV), tā izraisītajiem riskiem un valsts apmaksātas vakcinācijas iespējām. Projekta ietvaros radīts logo, komunikācijas materiāli un infografikas.</p>
+            </div>
+            <div class="project-images">
+          <img src="images/uzvari-cina-ar-vezi-kampanas-vizualis.webp" alt="Kampaņas „Uzvari cīņā ar vēzi, pirms tā sākas!” vizuālis ar rozā boksa cimdiem" loading="lazy" width="1200" height="1200">
+          <img data-narrow src="images/uzvari-cina-ar-vezi-pasakums.webp" alt="Pasākums ar runātājiem un skatītājiem, fonā kampaņas un organizāciju baneri" loading="lazy" width="1600" height="1068">
+          <img class="wide" src="images/uzvari-cina-ar-vezi-lietussargi-iela.webp" alt="Violetie lietussargi virs ielas ar kampaņas uzrakstu uz piekārtās kartītes" loading="lazy" width="1600" height="1068">
+          <img class="wide" src="images/uzvari-cina-ar-vezi-informativie-materiali.webp" alt="Kampaņas informatīvie materiāli: kartītes un buklets par vakcināciju pret CPV" loading="lazy" width="1600" height="1068">
+          <img data-narrow src="images/uzvari-cina-ar-vezi-lietussargs.webp" alt="Violets lietussargs ar kampaņas uzrakstu „Uzvari cīņā ar vēzi, pirms tā sākas!”" loading="lazy" width="1600" height="1068">
+          <img data-narrow src="images/uzvari-cina-ar-vezi-ara-reklama.webp" alt="Kampaņas āra reklāmas baneris uz ēkas sienas ar rozā boksa cimdiem" loading="lazy" width="1499" height="1000">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Pica Lulū -->
+      <article>
+        <button class="project-card" type="button" data-open="p3" aria-label="Atvērt galeriju: Pica Lulū kampaņa">
+          <span class="cover"><img src="images/pica-lulu-kampana-autobusa-pietura.webp" alt="" width="1200" height="1200"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p3" aria-labelledby="p3-title">
+          <div class="inner">
+            <header>
+              <h3 id="p3-title">Pica Lulū kampaņa</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Projekta ietvaros izstrādāta kampaņas ideja, reklāmas dizaini un vizuālie materiāli digitālajiem un drukātajiem komunikācijas kanāliem. Kampaņas komunikācijā saglabāts Pica Lulū raksturīgais rebel mārketinga stils – drosmīgs, asprātīgs un pamanāms.</p>
+              <p>Kampaņa veiksmīgi sasniedza izvirzītos mērķus un guva labus rezultātus.</p>
+            </div>
+            <div class="project-images">
+          <img class="wide" src="images/pica-lulu-kampana-telefons.webp" alt="Pica Lulū kampaņas vizuālis uz telefona ekrāna: dinozaurs uz Coca-Cola pudeles" loading="lazy" width="1430" height="1021">
+          <img data-narrow src="images/pica-lulu-kampana-ara-reklama.webp" alt="Pica Lulū āra reklāmas baneris naktī: pica kā planēta kosmosā un Coca-Cola pudele kā raķete" loading="lazy" width="1600" height="1067">
+          <img src="images/pica-lulu-kampana-autobusa-pietura.webp" alt="Pica Lulū reklāma autobusa pieturā: NLO, kas pacel picas un Coca-Cola pudeli" loading="lazy" width="1200" height="1200">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Erasmus+ -->
+      <article>
+        <button class="project-card" type="button" data-open="p4" aria-label="Atvērt galeriju: Erasmus+ komunikācijas kampaņas vizuālā identitāte">
+          <span class="cover"><img src="images/erasmus-plus-logo.webp" alt="" width="1200" height="1200"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p4" aria-labelledby="p4-title">
+          <div class="inner">
+            <header>
+              <h3 id="p4-title">Erasmus+ komunikācijas kampaņas vizuālā identitāte</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Erasmus+ komunikācijas kampaņai izstrādāta mūsdienīga un viegli atpazīstama vizuālā identitāte.</p>
+              <p>Projekta ietvaros izveidots logo, sociālo tīklu dizains un informatīvie materiāli, kas nodrošina vienotu kampaņas vizuālo stilu dažādos komunikācijas kanālos.</p>
+            </div>
+            <div class="project-images">
+          <img src="images/erasmus-plus-logo.webp" alt="Erasmus+ logo ar krāsainiem lokiem un saukli „Bagātini pieredzi, domā plašāk!”" loading="lazy" width="1200" height="1200">
+          <img data-narrow src="images/erasmus-plus-auduma-somas.webp" alt="Cilvēks tur auduma somu ar Erasmus+ kampaņas krāsainajiem grafiskajiem elementiem" loading="lazy" width="1500" height="1000">
+          <img src="images/erasmus-plus-qr-kods-plakats.webp" alt="Telefons skenē QR kodu uz Erasmus+ informatīvā plakāta „Noskaties video!”" loading="lazy" width="1080" height="1080">
+          <img src="images/erasmus-plus-facebook-ieraksts.webp" alt="Erasmus+ Latvija ieraksts Facebook ar skriešanas izaicinājuma vizuāli" loading="lazy" width="1080" height="1080">
+          <img src="images/erasmus-plus-izdevumi.webp" alt="Divi drukāti Erasmus+ izdevumi ar krāsainu loku grafiku uz vāka" loading="lazy" width="1121" height="1403">
+          <img src="images/erasmus-plus-brivpratigo-karte.webp" alt="Erasmus+ brīvprātīgā identifikācijas karte ar kampaņas krāsainajiem grafiskajiem elementiem" loading="lazy" width="1338" height="1337">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Nordic Sectech Summit -->
+      <article>
+        <button class="project-card" type="button" data-open="p2" aria-label="Atvērt galeriju: Nordic Sectech Summit 2023">
+          <span class="cover"><img src="images/nordic-sectech-summit-2023-skatuve.webp" alt="" width="1600" height="1065"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p2" aria-labelledby="p2-title">
+          <div class="inner">
+            <header>
+              <h3 id="p2-title">Nordic Sectech Summit 2023</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Nordic Sectech Summit 2023 — drošības nozares pasākuma vizuālās identitātes izstrāde.</p>
+              <p>Projekta ietvaros izveidots vienots vizuālās komunikācijas stils un izstrādāti dažādi materiāli digitālajai komunikācijai sociālajos tīklos, kā arī pasākuma norises nodrošināšanai.</p>
+            </div>
+            <div class="project-images">
+          <img data-narrow src="images/nordic-sectech-summit-2023-skatuve.webp" alt="Nordic Sectech Summit 2023 skatuve ar muzikantiem un lielu ekrānu" loading="lazy" width="1600" height="1065">
+          <img data-narrow src="images/nordic-sectech-summit-2023-stendi.webp" alt="Pasākuma stendi ar zilu ALTAS dizainu un runātāju portretiem" loading="lazy" width="1600" height="1065">
+          <img data-narrow src="images/nordic-sectech-summit-2023-runataju-plakati.webp" alt="Pasākuma runātāju portretu plakāti uz sienas un ekrāns ar uzrakstu „At Conference”" loading="lazy" width="1600" height="1065">
+          <img data-narrow src="images/nordic-sectech-summit-2023-pateicibas-diploms.webp" alt="Pateicības diploms un balva pasākumā Nordic Sectech Summit 2023" loading="lazy" width="1600" height="1065">
+          <img data-narrow src="images/nordic-sectech-summit-2023-diplomi-groza.webp" alt="Pateicības diplomi grozā starp baltiem maisiņiem pasākumā Nordic Sectech Summit 2023" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/nordic-sectech-summit-2023-runatajs-uz-skatuves.webp" alt="Runātājs uz skatuves Nordic Sectech Summit 2023 priekšā ekrānam ar pasākuma vizuāli" loading="lazy" width="1500" height="998">
+          <img data-narrow src="images/nordic-sectech-summit-2023-altas-baneris.webp" alt="ALTAS Security Technologies baneris izstādes stendā" loading="lazy" width="1600" height="1064">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Pi kuojis nakts -->
+      <article>
+        <button class="project-card" type="button" data-open="p1" aria-label="Atvērt galeriju: Pi kuojis nakts!">
+          <span class="cover"><img src="images/pi-kuojis-nakts-logotips.webp" alt="" width="1080" height="1350"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p1" aria-labelledby="p1-title">
+          <div class="inner">
+            <header>
+              <h3 id="p1-title">Pi kuojis nakts!</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Ielu sporta naktij “Pi kuojis nakts!” izveidota mūsdienīga vizuālā identitāte, kas atspoguļo pasākuma atmosfēru.</p>
+              <p>Projekta ietvaros izstrādāts logo un komunikācijas materiāli.</p>
+            </div>
+            <div class="project-images">
+          <img src="images/pi-kuojis-nakts-logotips.webp" alt="„Pi kuojis nakts!” logotips baltiem grafiti burtiem uz izplūdušas melnbaltas fotogrāfijas" loading="lazy" width="1080" height="1350">
+          <img src="images/pi-kuojis-nakts-dzemperis-ar-logotipu.webp" alt="Melns džemperis ar kapuci un „Pi kuojis nakts!” uzdruku" loading="lazy" width="1080" height="1350">
+          <img src="images/pi-kuojis-nakts-koka-kauss.webp" alt="Koka kauss ar iegravētu „Pi kuojis nakts!” uzrakstu" loading="lazy" width="1080" height="1350">
+          <img src="images/pi-kuojis-nakts-dejotaji-lietu.webp" alt="Dejotāji lietū naktī, priekšplānā divas meitenes ar lietussargiem" loading="lazy" width="1080" height="1350">
+          <img src="images/pi-kuojis-nakts-apbalvosana-pjedestala.webp" alt="Uzvarētāji ar medaļām un koka kausu uz pjedestāla" loading="lazy" width="1080" height="1350">
+          <img src="images/pi-kuojis-nakts-futbols-meitenes.webp" alt="Divas meitenes cīnās par bumbu naktī futbola turnīrā" loading="lazy" width="1080" height="1350">
+          <img class="wide" src="images/pi-kuojis-nakts-futbola-turnirs-nakti.webp" alt="Futbolisti sēž uz laukuma naktī zem prožektoru gaismas" loading="lazy" width="1600" height="1066">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Baltic Security Conference -->
+      <article>
+        <button class="project-card" type="button" data-open="p5" aria-label="Atvērt galeriju: Baltic Security Conference vizuālais komunikācijas stils">
+          <span class="cover"><img src="images/baltic-security-conference-dalibnieki-stends.webp" alt="" style="object-position:60% 50%" width="1600" height="1064"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p5" aria-labelledby="p5-title">
+          <div class="inner">
+            <header>
+              <h3 id="p5-title">Baltic Security Conference vizuālais komunikācijas stils</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Konferencei izveidots vienots un profesionāls vizuālais stils, kas atbilst šai nozarei.</p>
+              <p>Projekta ietvaros izstrādāti sociālo tīklu materiāli, informatīvie bukleti, vides baneri un citi pasākuma vizuālie materiāli. Dizains pielāgots gan digitālajai, gan drukātajai videi, saglabājot vienotu un skaidru vizuālo valodu.</p>
+            </div>
+            <div class="project-images">
+          <img data-narrow src="images/baltic-security-conference-darbnicu-programma.webp" alt="Konferences darbnīcu programmas norāde ar Baltic Security Conference vizuālo stilu" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/baltic-security-conference-baneris.webp" alt="Baltic Security Conference lielformāta baneris ar konferences programmu" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/baltic-security-conference-dalibnieki-stends.webp" alt="Konferences dalībnieki pie izstādes stenda ar aizsargbrillēm" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/baltic-security-conference-atputas-zona.webp" alt="Konferences atpūtas un tīklošanās zona ar LED ekrāniem" loading="lazy" width="1600" height="1064">
+          <img class="wide" src="images/baltic-security-conference-socialo-tiklu-dizains.webp" alt="Baltic Security Conference sociālo tīklu ziņu dizains: dalībnieku un runātāju kartītes" loading="lazy" width="1600" height="1000">
+          <img src="images/baltic-security-conference-buklets-2025.webp" alt="Baltic Security Conference 2025 buklets „Want to book your place?” blakus augam" loading="lazy" width="1065" height="1600">
+          <img src="images/baltic-security-conference-dalibnieku-kartites.webp" alt="Konferences dalībnieka kartītes ar QR kodu programmai rokās" loading="lazy" width="1064" height="1600">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
+      <!-- Raccoons Gym -->
+      <article>
+        <button class="project-card" type="button" data-open="p9" aria-label="Atvērt galeriju: Raccoons Gym — vizuālā identitāte">
+          <span class="cover"><img src="images/raccoons-gym-logo.webp" alt="" width="1080" height="1080"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p9" aria-labelledby="p9-title">
+          <div class="inner">
+            <header>
+              <h3 id="p9-title">Raccoons Gym — vizuālā identitāte</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p>Izstrādāts Raccoons Gym zīmola vizuālais tēls — logo, vizuālās komunikācijas materiāli un sociālo tīklu stils.</p>
+            </div>
+            <div class="project-images">
+          <img src="images/raccoons-gym-logo.webp" alt="Raccoons Gym logo – sarkana jenota galva ar uzrakstu GYM uz melnbaltas skrējējas fona" loading="lazy" width="1080" height="1080">
+          <img src="images/raccoons-gym-instagram-stils.webp" alt="Raccoons Gym Instagram profila stils uz telefona ekrāna" loading="lazy" width="1200" height="1200">
+          <img src="images/raccoons-gym-uzlime.webp" alt="Raccoons uzlīme uz ielas stabiņa starp citām uzlīmēm" loading="lazy" width="1200" height="1200">
+          <img src="images/raccoons-gym-lietotnes-ikona.webp" alt="Raccoons Gym lietotnes ikona telefona sākuma ekrānā" loading="lazy" width="1200" height="1200">
+          <img class="wide" src="images/raccoons-gym-plakats.webp" alt="GYM app plakāts oranžas flīžu sienas stacijā, garām iet cilvēks" loading="lazy" width="1600" height="1066">
+            </div>
+          </div>
+        </dialog>
+      </article>
     </div>
-    <div class="g-carousel__controls">
-      <button id="gPrev" class="g-btn" aria-label="Previous">‹</button>
-      <button id="gNext" class="g-btn" aria-label="Next">›</button>
+  </div>
+</section>
+
+<section id="reviews" style="padding-top:0">
+  <div class="wrap">
+    <div class="g-reviews loading">
+      <div class="g-carousel">
+        <div class="g-carousel__viewport">
+          <div id="gCarouselTrack" class="g-carousel__track"></div>
+        </div>
+        <div class="g-carousel__controls">
+          <button id="gPrev" class="g-btn" type="button" aria-label="Previous">‹</button>
+          <button id="gNext" class="g-btn" type="button" aria-label="Next">›</button>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -299,8 +426,6 @@ mūsdienīgiem zīmoliem</h1>
   document.querySelector('.g-reviews').classList.remove('loading');
   if (!res.ok) throw new Error("Failed to load reviews");
   const data = await res.json();
-
-  const header = document.getElementById("gReviewsHeader");
 
   const track = document.getElementById("gCarouselTrack");
   const prevBtn = document.getElementById("gPrev");
@@ -373,59 +498,53 @@ mūsdienīgiem zīmoliem</h1>
   document.querySelector('.g-reviews').classList.add('error');
   document.querySelector('.g-reviews').classList.remove('loading');
   const carousel = document.querySelector('.g-carousel');
-  if (carousel) carousel.innerHTML = `<a class="g-cta" href="https://www.google.com/maps?cid=2513767175975181188&hl=en&reviews=1
-" rel="noopener">Lasīt atsauksmes Google</a>`;
+  if (carousel) carousel.innerHTML = `<a class="g-cta" href="https://www.google.com/maps?cid=2513767175975181188&hl=en&reviews=1" rel="noopener">Lasīt atsauksmes Google</a>`;
 });
 </script>
 
-
-
-    </main>
-    <footer>
-      <span class="email"><a href="mailto:inese@smartraccoons.lv">inese@smartraccoons.lv</a><span class="copy"><span class="tooltip"></span>
-</span></span>
-      <span><a href="https://www.instagram.com/raccoons_design/">mūsu darbi</a></span>
-    </footer>
+<section id="faq" style="padding-top:0">
+  <div class="wrap">
+    <h2>Biežāk uzdotie jautājumi</h2>
+    <div class="faq">
+      <details open><summary>Kādus pakalpojumus piedāvā?</summary>
+        <p><strong>Vizuālā identitāte</strong> — no logotipa līdz krāsu paletei, grafiskajiem elementiem un zīmola vadlīnijām — izveidojam konsekventu identitāti, kas izceļas un paliek atmiņā.</p>
+        <p><strong>Dizains</strong> — pārvēršam idejas vizuāli skaidrā un izteiksmīgā komunikācijā. Radām dizainu, kas apvieno estētiku, funkcionalitāti un zīmola raksturu — digitālajiem kanāliem, sociālajiem tīkliem, drukai un citām zīmola vajadzībām.</p>
+      </details>
+      <details><summary>Kā sākt sadarbību?</summary><p>Sadarbību varam uzsākt ar īsu sarunu par jūsu ideju, vajadzībām un projekta mērķiem. Atsūtiet mums ziņu ar nelielu projekta aprakstu, un mēs sazināsimies ar jums, lai pārrunātu detaļas, izstrādātu piemērotāko risinājumu un vienotos par nākamajiem soļiem.</p></details>
+      <details><summary>Cik ilgi aizņem projekts?</summary><p>Projekta ilgums ir atkarīgs no tā apjoma un sarežģītības. Nelieli grafiskā dizaina darbi parasti tiek pabeigti 7 dienu laikā, savukārt plašāki projekti, piemēram, vizuālās identitātes, iepakojuma vai zīmola izstrāde, var aizņemt 3–6 nedēļas. Pirms darba uzsākšanas vienojamies par projekta apjomu, termiņiem un galvenajiem posmiem, lai process būtu skaidrs, pārskatāms un ērts abām pusēm.</p></details>
+      <details><summary>Vai labojumi ir iekļauti?</summary><p>Jā, labojumi ir iekļauti projekta procesā. Pēc pirmās dizaina versijas saņemam jūsu atsauksmes un veicam nepieciešamās korekcijas, lai gala rezultāts atbilstu jūsu vajadzībām un iecerei. Labojumu apjoms tiek saskaņots atbilstoši katra projekta specifikai.</p></details>
+      <details><summary>Kā veidojas cena?</summary><p>Cena tiek noteikta atbilstoši projekta apjomam, sarežģītībai un termiņiem. Pirms darba uzsākšanas iepazīstamies ar jūsu vajadzībām un sagatavojam individuālu piedāvājumu.</p></details>
+    </div>
   </div>
+</section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap">
+    <h2>Dod ziņu!</h2>
+    <div class="links">
+      <a href="mailto:inese@smartraccoons.lv">inese@smartraccoons.lv</a>
+      <a href="https://www.instagram.com/raccoons_design/" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://www.facebook.com/SmartRaccoonsDesign" target="_blank" rel="noopener">Facebook</a>
+    </div>
+    <p class="copy">© 2026 SIA Smart Raccoons Design. Visas tiesības aizsargātas.</p>
+  </div>
+</footer>
+
 <script>
-  const isTouchDevice = window.matchMedia("(pointer: coarse)").matches;
-  if (!isTouchDevice) {
-    document.body.classList.add("hover");
-  }
-  if (navigator.clipboard && navigator.clipboard.writeText) {
-    const wrapper = document.querySelector(".copy");
-    wrapper.classList.add("enabled");
-    var copyEmailTimeout;
-    var mouseEnter = false;
-    var timeoutRunning = false
-    if (!isTouchDevice) {
-      wrapper.addEventListener('mouseenter', () => {
-        wrapper.setAttribute("aria-label", "Kopēt e-pastu");
-        mouseEnter = true;
-      });
-      wrapper.addEventListener('mouseleave', () => {
-        mouseEnter = false;
-        if (timeoutRunning) return;
-        wrapper.classList.remove("copied");
-      });
-    }
-    wrapper.addEventListener('click', () => {
-      copyEmail();
-    });
-    function copyEmail() {
-      navigator.clipboard.writeText("inese@smartraccoons.lv").then(() => {
-        wrapper.setAttribute("aria-label", "Nokopēts!");
-        wrapper.classList.add("copied");
-        clearTimeout(copyEmailTimeout);
-        timeoutRunning = true;
-        copyEmailTimeout = setTimeout(() => {
-          timeoutRunning = false;
-          if (mouseEnter) return;
-          wrapper.classList.remove("copied");
-        }, 2000);
-      });
-    }
-  }
+document.querySelectorAll('[data-open]').forEach(function(b){
+  b.addEventListener('click',function(){
+    var d=document.getElementById(b.dataset.open);d.showModal();d.focus();d.querySelectorAll('iframe[data-src]').forEach(function(f){if(!f.src)f.src=f.dataset.src;});
+    document.body.style.overflow='hidden';
+  });
+});
+document.querySelectorAll('dialog.project-modal').forEach(function(d){
+  d.querySelectorAll('.project-images img').forEach(function(i){var f=function(){if(!i.hasAttribute('data-narrow')&&i.naturalWidth>i.naturalHeight*1.05)i.classList.add('wide');};if(i.complete)f();else i.addEventListener('load',f);});
+  d.addEventListener('close',function(){document.body.style.overflow='';d.querySelectorAll('iframe[data-src]').forEach(function(f){f.removeAttribute('src');});});
+  d.addEventListener('click',function(e){if(e.target===d)d.close();});
+  d.querySelector('.close').addEventListener('click',function(){d.close();});
+});
 </script>
 </body>
 </html>
