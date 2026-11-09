@@ -8,7 +8,7 @@
 <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,600;9..40,800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,600;0,9..40,800;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 :root{--bg:#E3202B;--ink:#fff;--muted:rgba(255,255,255,.85);--line:rgba(255,255,255,.4);--card:#fff;--dark:#1B1B1B;--accent:#fff;--accent-ink:#E3202B;--r:20px}
 *{box-sizing:border-box;margin:0}
@@ -63,6 +63,7 @@ nav a:hover{text-decoration:underline}
 .project-info{max-width:62ch;margin-bottom:32px}
 .project-info p{color:rgba(255,255,255,.78);font-size:1.1rem}
 .project-info p+p{margin-top:12px}
+.project-info p.lead{font-size:1rem;font-style:italic;font-weight:400}
 .project-images{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;align-items:center}
 .project-images img{width:100%;height:auto;display:block}
 .project-images img.wide{grid-column:1/-1}
@@ -157,48 +158,20 @@ details:not([open])>*:not(summary){display:none}
            Lai pievienotu jaunu projektu: nokopē visu projekta bloku (no article sākuma līdz beigām),
            nomaini id (piem. p8), vāka attēlu, nosaukumu logā un attēlus logā. -->
 
-      <!-- Seeds &amp; Sprouts -->
-      <article>
-        <button class="project-card" type="button" data-open="p7" aria-label="Atvērt galeriju: Seeds &amp; Sprouts">
-          <span class="cover"><img src="images/seeds-and-sprouts-spinatu-iepakojums.webp" alt="" width="1600" height="1068"></span>
-        </button>
-        <dialog class="project-modal" tabindex="-1" id="p7" aria-labelledby="p7-title">
-          <div class="inner">
-            <header>
-              <h3 id="p7-title">Seeds &amp; Sprouts</h3>
-              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
-            </header>
-            <div class="project-info">
-              <p>Dizaina pamatā ir dabas iedvesmota estētika, zaļie toņi un ilustrācijas, kas izceļ produktu svaigumu un dabisko izcelsmi.</p>
-              <p>Minimālistiskais dizains, pārdomātā tipogrāfija un vienotā grafiskā valoda veido atpazīstamu zīmola tēlu, kas konsekventi atspoguļojas gan produktu iepakojumā, gan drukātajos materiālos.</p>
-            </div>
-            <div class="project-images">
-          <img class="wide" src="images/seeds-and-sprouts-spinatu-iepakojums.webp" alt="Spinātu iepakojums ar Seeds &amp; Sprouts etiķeti uz spinātu lapu fona" loading="lazy" width="1600" height="1068">
-          <img src="images/seeds-and-sprouts-about-us.webp" alt="Seeds &amp; Sprouts informatīvs materiāls ar sadaļu „About Us” uz salātu lapu fona" loading="lazy" width="1080" height="1528">
-          <img src="images/seeds-and-sprouts-katalogs.webp" alt="Seeds &amp; Sprouts katalogs ar sadaļu „Produkcija” un rukolas ilustrāciju" loading="lazy" width="1080" height="1350">
-          <img src="images/seeds-and-sprouts-logo-digsti.webp" alt="Seeds &amp; Sprouts logo ar augu un saknēm uz dīgstu fona" loading="lazy" width="1443" height="1443">
-          <img src="images/seeds-and-sprouts-auduma-maisins.webp" alt="Zaļš auduma iepirkumu maisiņš ar baltām garšaugu ilustrācijām un kontaktinformāciju" loading="lazy" width="1200" height="1200">
-          <img src="images/seeds-and-sprouts-vizitkarte.webp" alt="Seeds &amp; Sprouts vizītkartes uz spinātu lapu fona" loading="lazy" width="1200" height="1500">
-          <img src="images/seeds-and-sprouts-logo-uz-auduma.webp" alt="Seeds &amp; Sprouts logo uz auduma" loading="lazy" width="1200" height="1200">
-            </div>
-          </div>
-        </dialog>
-      </article>
-
       <!-- Priežvanagi -->
       <article>
-        <button class="project-card" type="button" data-open="p6" aria-label="Atvērt galeriju: Atpūtas parka Priežvanagi vizuālā identitāte">
+        <button class="project-card" type="button" data-open="p6" aria-label="Atvērt galeriju: Atpūtas parks Priežvanagi">
           <span class="cover"><img src="images/priezvanagi-logo.webp" alt="" width="1085" height="1085"></span>
         </button>
         <dialog class="project-modal" tabindex="-1" id="p6" aria-labelledby="p6-title">
           <div class="inner">
             <header>
-              <h3 id="p6-title">Atpūtas parka Priežvanagi vizuālā identitāte</h3>
+              <h3 id="p6-title">Atpūtas parks Priežvanagi</h3>
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Vizuālā identitāte veidota, balstoties uz atpūtas parka aktivitātēm un apkārtējās vides – upes, kanoe, loka šaušanas un priežu meža, kurš ieskauj teritoriju.</p>
-              <p>Izstrādāts logo, ikonu sistēma un vizuālās identitātes elementi.</p>
+              <p class="lead">Jaunizveidots tūrisma un atpūtas pakalpojumu sniedzējs.</p>
+              <p>Vizuālā identitāte veidota, balstoties uz atpūtas parka aktivitātēm - kanoe, loka šaušanas - un vidi - upi, priežu mežu, kas ieskauj teritoriju. Izstrādāts logo, ikonu sistēma, vizuālās identitātes elementi un komunikācijas materiāli.</p>
             </div>
             <div class="project-images">
           <img src="images/priezvanagi-logo.webp" alt="Priežvanagi logo – mājas simbols ar koku un viļņiem uz meža fona" loading="lazy" width="1085" height="1085">
@@ -212,20 +185,20 @@ details:not([open])>*:not(summary){display:none}
         </dialog>
       </article>
 
-      <!-- Kampaņas vizuālā identitāte -->
+      <!-- Veselības kampaņa -->
       <article>
-        <button class="project-card" type="button" data-open="p8" aria-label="Atvērt galeriju: Kampaņas vizuālā identitāte">
+        <button class="project-card" type="button" data-open="p8" aria-label="Atvērt galeriju: Veselības kampaņa “Uzvari cīņā ar vēzi, pirms tā sākas”">
           <span class="cover"><img src="images/uzvari-cina-ar-vezi-kampanas-vizualis.webp" alt="" width="1200" height="1200"></span>
         </button>
         <dialog class="project-modal" tabindex="-1" id="p8" aria-labelledby="p8-title">
           <div class="inner">
             <header>
-              <h3 id="p8-title">Kampaņas vizuālā identitāte</h3>
+              <h3 id="p8-title">Veselības kampaņa “Uzvari cīņā ar vēzi, pirms tā sākas”</h3>
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Vizuālā identitāte Veselības ministrijas un Slimību profilakses un kontroles centra sabiedrības informēšanas kampaņai “Uzvari cīņā ar vēzi, pirms tā sākas”.</p>
-              <p>Kampaņas mērķis – veicināt izpratni par cilvēka papilomas vīrusu (CPV), tā izraisītajiem riskiem un valsts apmaksātas vakcinācijas iespējām. Projekta ietvaros radīts logo, komunikācijas materiāli un infografikas.</p>
+              <p class="lead">Veselības ministrijas un Slimību profilakses un kontroles centra sabiedrības informēšanas kampaņa.</p>
+              <p>Kampaņas vizuālā identitāte veidota ar mērķi pievērst sabiedrības uzmanību cilvēka papilomas vīrusam (CPV), tā izraisītajiem riskiem un vakcinācijas iespējām. Projekta ietvaros izstrādāts logo, komunikācijas materiāli un infografikas, kas sarežģītu informāciju palīdz pasniegt saprotami, uzskatāmi un viegli uztverami.</p>
             </div>
             <div class="project-images">
           <img src="images/uzvari-cina-ar-vezi-kampanas-vizualis.webp" alt="Kampaņas „Uzvari cīņā ar vēzi, pirms tā sākas!” vizuālis ar rozā boksa cimdiem" loading="lazy" width="1200" height="1200">
@@ -251,8 +224,8 @@ details:not([open])>*:not(summary){display:none}
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Projekta ietvaros izstrādāta kampaņas ideja, reklāmas dizaini un vizuālie materiāli digitālajiem un drukātajiem komunikācijas kanāliem. Kampaņas komunikācijā saglabāts Pica Lulū raksturīgais rebel mārketinga stils – drosmīgs, asprātīgs un pamanāms.</p>
-              <p>Kampaņa veiksmīgi sasniedza izvirzītos mērķus un guva labus rezultātus.</p>
+              <p class="lead">Latvijā radīts picēriju tīkls, kas piedāvā gardas un daudzveidīgas picas ikvienai gaumei. Piekopj Rebel mārketinga stilu.</p>
+              <p>Projekta ietvaros izstrādāta kampaņas ideja, reklāmas dizaini un vizuālie materiāli digitālajiem un drukātajiem komunikācijas kanāliem. Saglabāts Pica Lulū raksturīgais komunikācijas stils - drosmīgs, asprātīgs un provokatīvs. Kampaņa veiksmīgi sasniedza izvirzītos mērķus un guva labus rezultātus.</p>
             </div>
             <div class="project-images">
           <img class="wide" src="images/pica-lulu-kampana-telefons.webp" alt="Pica Lulū kampaņas vizuālis uz telefona ekrāna: dinozaurs uz Coca-Cola pudeles" loading="lazy" width="1430" height="1021">
@@ -263,20 +236,48 @@ details:not([open])>*:not(summary){display:none}
         </dialog>
       </article>
 
+      <!-- Baltic Security Conference -->
+      <article>
+        <button class="project-card" type="button" data-open="p5" aria-label="Atvērt galeriju: Baltic Security Conference">
+          <span class="cover"><img src="images/baltic-security-conference-dalibnieki-stends.webp" alt="" style="object-position:60% 50%" width="1600" height="1064"></span>
+        </button>
+        <dialog class="project-modal" tabindex="-1" id="p5" aria-labelledby="p5-title">
+          <div class="inner">
+            <header>
+              <h3 id="p5-title">Baltic Security Conference</h3>
+              <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
+            </header>
+            <div class="project-info">
+              <p class="lead">Lielākais Baltijas drošības pasākums, kas pulcē 3000 dalībnieku no Centrāleiropas un Ziemeļeiropas valstīm.</p>
+              <p>Konferencei izveidots vienots vizuālais stils, kurš veiksmīgi strādā dažādās vidēs. Projekta ietvaros izstrādāti plakāti, vides baneri, brošūras, prezentmateriāli un sociālo tīklu ieraksti. Dizains pielāgots gan digitālajai, gan drukātajai videi, saglabājot vienotu un skaidru vizuālo valodu.</p>
+            </div>
+            <div class="project-images">
+          <img data-narrow src="images/baltic-security-conference-darbnicu-programma.webp" alt="Konferences darbnīcu programmas norāde ar Baltic Security Conference vizuālo stilu" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/baltic-security-conference-baneris.webp" alt="Baltic Security Conference lielformāta baneris ar konferences programmu" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/baltic-security-conference-dalibnieki-stends.webp" alt="Konferences dalībnieki pie izstādes stenda ar aizsargbrillēm" loading="lazy" width="1600" height="1064">
+          <img data-narrow src="images/baltic-security-conference-atputas-zona.webp" alt="Konferences atpūtas un tīklošanās zona ar LED ekrāniem" loading="lazy" width="1600" height="1064">
+          <img class="wide" src="images/baltic-security-conference-socialo-tiklu-dizains.webp" alt="Baltic Security Conference sociālo tīklu ziņu dizains: dalībnieku un runātāju kartītes" loading="lazy" width="1600" height="1000">
+          <img src="images/baltic-security-conference-buklets-2025.webp" alt="Baltic Security Conference 2025 buklets „Want to book your place?” blakus augam" loading="lazy" width="1065" height="1600">
+          <img src="images/baltic-security-conference-dalibnieku-kartites.webp" alt="Konferences dalībnieka kartītes ar QR kodu programmai rokās" loading="lazy" width="1064" height="1600">
+            </div>
+          </div>
+        </dialog>
+      </article>
+
       <!-- Erasmus+ -->
       <article>
-        <button class="project-card" type="button" data-open="p4" aria-label="Atvērt galeriju: Erasmus+ komunikācijas kampaņas vizuālā identitāte">
+        <button class="project-card" type="button" data-open="p4" aria-label="Atvērt galeriju: Erasmus+ komunikācijas kampaņa">
           <span class="cover"><img src="images/erasmus-plus-logo.webp" alt="" width="1200" height="1200"></span>
         </button>
         <dialog class="project-modal" tabindex="-1" id="p4" aria-labelledby="p4-title">
           <div class="inner">
             <header>
-              <h3 id="p4-title">Erasmus+ komunikācijas kampaņas vizuālā identitāte</h3>
+              <h3 id="p4-title">Erasmus+ komunikācijas kampaņa</h3>
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Erasmus+ komunikācijas kampaņai izstrādāta mūsdienīga un viegli atpazīstama vizuālā identitāte.</p>
-              <p>Projekta ietvaros izveidots logo, sociālo tīklu dizains un informatīvie materiāli, kas nodrošina vienotu kampaņas vizuālo stilu dažādos komunikācijas kanālos.</p>
+              <p class="lead">Eiropas Savienības programma, kas piedāvā jauniešiem iespēju mācīties, strādāt un iegūt jaunu pieredzi citās valstīs.</p>
+              <p>Kampaņai izstrādāta vienota vizuālā identitāte, kas nodrošina atpazīstamu un konsekventu komunikāciju dažādos kanālos. Projekta ietvaros radīts logo, sociālo tīklu dizains un informatīvie materiāli, pielāgojot vizuālo valodu gan digitālajai, gan drukātajai videi.</p>
             </div>
             <div class="project-images">
           <img src="images/erasmus-plus-logo.webp" alt="Erasmus+ logo ar krāsainiem lokiem un saukli „Bagātini pieredzi, domā plašāk!”" loading="lazy" width="1200" height="1200">
@@ -302,8 +303,8 @@ details:not([open])>*:not(summary){display:none}
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Nordic Sectech Summit 2023 — drošības nozares pasākuma vizuālās identitātes izstrāde.</p>
-              <p>Projekta ietvaros izveidots vienots vizuālās komunikācijas stils un izstrādāti dažādi materiāli digitālajai komunikācijai sociālajos tīklos, kā arī pasākuma norises nodrošināšanai.</p>
+              <p class="lead">Starptautisks drošības nozares pasākums, kas apvieno nozares profesionāļus un ekspertus.</p>
+              <p>Pasākumam izstrādāta vienota vizuālā identitāte un komunikācijas stils, kas atspoguļo drošības nozares dinamiku un mūsdienīgo raksturu. Projekta ietvaros radīti digitālās komunikācijas materiāli sociālajiem tīkliem, kā arī dažādi vizuālie risinājumi pasākuma norises nodrošināšanai.</p>
             </div>
             <div class="project-images">
           <img data-narrow src="images/nordic-sectech-summit-2023-skatuve.webp" alt="Nordic Sectech Summit 2023 skatuve ar muzikantiem un lielu ekrānu" loading="lazy" width="1600" height="1065">
@@ -330,8 +331,8 @@ details:not([open])>*:not(summary){display:none}
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Ielu sporta naktij “Pi kuojis nakts!” izveidota mūsdienīga vizuālā identitāte, kas atspoguļo pasākuma atmosfēru.</p>
-              <p>Projekta ietvaros izstrādāts logo un komunikācijas materiāli.</p>
+              <p class="lead">Ielu sporta nakts, kas apvieno kustību, enerģiju un pilsētas kultūru.</p>
+              <p>Pasākumam izstrādāta mūsdienīga un dinamiska vizuālā identitāte, kas atspoguļo ielu sporta raksturu un pasākuma atmosfēru. Projekta ietvaros radīts logo un komunikācijas materiāli, veidojot vienotu un pamanāmu vizuālo tēlu.</p>
             </div>
             <div class="project-images">
           <img src="images/pi-kuojis-nakts-logotips.webp" alt="„Pi kuojis nakts!” logotips baltiem grafiti burtiem uz izplūdušas melnbaltas fotogrāfijas" loading="lazy" width="1080" height="1350">
@@ -346,29 +347,29 @@ details:not([open])>*:not(summary){display:none}
         </dialog>
       </article>
 
-      <!-- Baltic Security Conference -->
+      <!-- Seeds &amp; Sprouts -->
       <article>
-        <button class="project-card" type="button" data-open="p5" aria-label="Atvērt galeriju: Baltic Security Conference vizuālais komunikācijas stils">
-          <span class="cover"><img src="images/baltic-security-conference-dalibnieki-stends.webp" alt="" style="object-position:60% 50%" width="1600" height="1064"></span>
+        <button class="project-card" type="button" data-open="p7" aria-label="Atvērt galeriju: Seeds &amp; Sprouts">
+          <span class="cover"><img src="images/seeds-and-sprouts-spinatu-iepakojums.webp" alt="" width="1600" height="1068"></span>
         </button>
-        <dialog class="project-modal" tabindex="-1" id="p5" aria-labelledby="p5-title">
+        <dialog class="project-modal" tabindex="-1" id="p7" aria-labelledby="p7-title">
           <div class="inner">
             <header>
-              <h3 id="p5-title">Baltic Security Conference vizuālais komunikācijas stils</h3>
+              <h3 id="p7-title">Seeds &amp; Sprouts</h3>
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Konferencei izveidots vienots un profesionāls vizuālais stils, kas atbilst šai nozarei.</p>
-              <p>Projekta ietvaros izstrādāti sociālo tīklu materiāli, informatīvie bukleti, vides baneri un citi pasākuma vizuālie materiāli. Dizains pielāgots gan digitālajai, gan drukātajai videi, saglabājot vienotu un skaidru vizuālo valodu.</p>
+              <p class="lead">Jauns dabas iedvesmots zīmols, kas izceļ produktu svaigumu un dabisko izcelsmi.</p>
+              <p>Zīmola vizuālā identitāte veidota, iedvesmojoties no dabas - izmantoti zaļie toņi, ilustrācijas un minimālistiska dizaina pieeja. Izstrādāts vienots vizuālais stils, pārdomāta tipogrāfija un produktu iepakojuma dizains, kā arī drukātie materiāli, veidojot atpazīstamu un saskanīgu zīmola tēlu.</p>
             </div>
             <div class="project-images">
-          <img data-narrow src="images/baltic-security-conference-darbnicu-programma.webp" alt="Konferences darbnīcu programmas norāde ar Baltic Security Conference vizuālo stilu" loading="lazy" width="1600" height="1064">
-          <img data-narrow src="images/baltic-security-conference-baneris.webp" alt="Baltic Security Conference lielformāta baneris ar konferences programmu" loading="lazy" width="1600" height="1064">
-          <img data-narrow src="images/baltic-security-conference-dalibnieki-stends.webp" alt="Konferences dalībnieki pie izstādes stenda ar aizsargbrillēm" loading="lazy" width="1600" height="1064">
-          <img data-narrow src="images/baltic-security-conference-atputas-zona.webp" alt="Konferences atpūtas un tīklošanās zona ar LED ekrāniem" loading="lazy" width="1600" height="1064">
-          <img class="wide" src="images/baltic-security-conference-socialo-tiklu-dizains.webp" alt="Baltic Security Conference sociālo tīklu ziņu dizains: dalībnieku un runātāju kartītes" loading="lazy" width="1600" height="1000">
-          <img src="images/baltic-security-conference-buklets-2025.webp" alt="Baltic Security Conference 2025 buklets „Want to book your place?” blakus augam" loading="lazy" width="1065" height="1600">
-          <img src="images/baltic-security-conference-dalibnieku-kartites.webp" alt="Konferences dalībnieka kartītes ar QR kodu programmai rokās" loading="lazy" width="1064" height="1600">
+          <img class="wide" src="images/seeds-and-sprouts-spinatu-iepakojums.webp" alt="Spinātu iepakojums ar Seeds &amp; Sprouts etiķeti uz spinātu lapu fona" loading="lazy" width="1600" height="1068">
+          <img src="images/seeds-and-sprouts-about-us.webp" alt="Seeds &amp; Sprouts informatīvs materiāls ar sadaļu „About Us” uz salātu lapu fona" loading="lazy" width="1080" height="1528">
+          <img src="images/seeds-and-sprouts-katalogs.webp" alt="Seeds &amp; Sprouts katalogs ar sadaļu „Produkcija” un rukolas ilustrāciju" loading="lazy" width="1080" height="1350">
+          <img src="images/seeds-and-sprouts-logo-digsti.webp" alt="Seeds &amp; Sprouts logo ar augu un saknēm uz dīgstu fona" loading="lazy" width="1443" height="1443">
+          <img src="images/seeds-and-sprouts-auduma-maisins.webp" alt="Zaļš auduma iepirkumu maisiņš ar baltām garšaugu ilustrācijām un kontaktinformāciju" loading="lazy" width="1200" height="1200">
+          <img src="images/seeds-and-sprouts-vizitkarte.webp" alt="Seeds &amp; Sprouts vizītkartes uz spinātu lapu fona" loading="lazy" width="1200" height="1500">
+          <img src="images/seeds-and-sprouts-logo-uz-auduma.webp" alt="Seeds &amp; Sprouts logo uz auduma" loading="lazy" width="1200" height="1200">
             </div>
           </div>
         </dialog>
@@ -376,17 +377,18 @@ details:not([open])>*:not(summary){display:none}
 
       <!-- Raccoons Gym -->
       <article>
-        <button class="project-card" type="button" data-open="p9" aria-label="Atvērt galeriju: Raccoons Gym — vizuālā identitāte">
+        <button class="project-card" type="button" data-open="p9" aria-label="Atvērt galeriju: Raccoons Gym">
           <span class="cover"><img src="images/raccoons-gym-logo.webp" alt="" width="1080" height="1080"></span>
         </button>
         <dialog class="project-modal" tabindex="-1" id="p9" aria-labelledby="p9-title">
           <div class="inner">
             <header>
-              <h3 id="p9-title">Raccoons Gym — vizuālā identitāte</h3>
+              <h3 id="p9-title">Raccoons Gym</h3>
               <button class="close" type="button" aria-label="Aizvērt"><svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="square" aria-hidden="true"><path d="M3 3l14 14M17 3L3 17"/></svg></button>
             </header>
             <div class="project-info">
-              <p>Izstrādāts Raccoons Gym zīmola vizuālais tēls — logo, vizuālās komunikācijas materiāli un sociālo tīklu stils.</p>
+              <p class="lead">GYM lietotne, kas ļauj ērti izveidot treniņu plānus, uzraudzīt savu progresu un efektīvi virzīties uz nospraustajiem fitnesa mērķiem.</p>
+              <p>Izstrādāta Raccoons Gym zīmola vizuālā identitāte, veidojot atpazīstamu un vienotu zīmola tēlu. Projekta ietvaros radīts logo, vizuālās komunikācijas materiāli un sociālo tīklu dizaina stils, kas nodrošina konsekventu zīmola atspoguļojumu dažādos komunikācijas kanālos.</p>
             </div>
             <div class="project-images">
           <img src="images/raccoons-gym-logo.webp" alt="Raccoons Gym logo – sarkana jenota galva ar uzrakstu GYM uz melnbaltas skrējējas fona" loading="lazy" width="1080" height="1080">
@@ -507,8 +509,8 @@ details:not([open])>*:not(summary){display:none}
     <h2>Biežāk uzdotie jautājumi</h2>
     <div class="faq">
       <details open><summary>Kādus pakalpojumus piedāvā?</summary>
-        <p><strong>Vizuālā identitāte</strong> — no logotipa līdz krāsu paletei, grafiskajiem elementiem un zīmola vadlīnijām — izveidojam konsekventu identitāti, kas izceļas un paliek atmiņā.</p>
-        <p><strong>Dizains</strong> — pārvēršam idejas vizuāli skaidrā un izteiksmīgā komunikācijā. Radām dizainu, kas apvieno estētiku, funkcionalitāti un zīmola raksturu — digitālajiem kanāliem, sociālajiem tīkliem, drukai un citām zīmola vajadzībām.</p>
+        <p>Mēs parūpēsimies par jūsu vizuālo identitāti, sociālo tīklu dizainu, digitālās vides dizainu un drukas dizainu.</p>
+        <p>No logotipa līdz krāsu paletei, grafiskajiem elementiem un zīmola vadlīnijām — izveidojam konsekventu identitāti, kas izceļas un paliek atmiņā. Pārvēršam idejas vizuāli skaidrā un izteiksmīgā komunikācijā.</p>
       </details>
       <details><summary>Kā sākt sadarbību?</summary><p>Sadarbību varam uzsākt ar īsu sarunu par jūsu ideju, vajadzībām un projekta mērķiem. Atsūtiet mums ziņu ar nelielu projekta aprakstu, un mēs sazināsimies ar jums, lai pārrunātu detaļas, izstrādātu piemērotāko risinājumu un vienotos par nākamajiem soļiem.</p></details>
       <details><summary>Cik ilgi aizņem projekts?</summary><p>Projekta ilgums ir atkarīgs no tā apjoma un sarežģītības. Nelieli grafiskā dizaina darbi parasti tiek pabeigti 7 dienu laikā, savukārt plašāki projekti, piemēram, vizuālās identitātes, iepakojuma vai zīmola izstrāde, var aizņemt 3–6 nedēļas. Pirms darba uzsākšanas vienojamies par projekta apjomu, termiņiem un galvenajiem posmiem, lai process būtu skaidrs, pārskatāms un ērts abām pusēm.</p></details>
